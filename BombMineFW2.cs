@@ -6,11 +6,12 @@ class MainClass {
     int r = Int32.Parse(Console.ReadLine());
     Console.WriteLine("Type number of column:  "); 
     int c = Int32.Parse(Console.ReadLine());
-
+    Console.WriteLine("Type number of bomb: ");
+    int b = Int32.Parse(Console.ReadLine());
 
     int[,] matrix= new int[r,c];
     Random bomb = new Random();
-    int numbom = bomb.Next(1, (r*c)/2);
+    int numbom = b;
     int bp;
     int bpr;
    for (int i=0; i< matrix.GetLength(0); i++){
@@ -47,7 +48,7 @@ class MainClass {
                 matrix[i,j]++;
 
               }
-              if ( (i+1) < r && (j-1) >0 && matrix[i+1,j-1] ==9){
+              if ( (i+1) < r && (j-1) >-1 && matrix[i+1,j-1] ==9){
                       matrix[i,j]++;
               }
               if ((i-1) > -1 && (j+1) <c &&matrix[i-1,j+1] ==9){
